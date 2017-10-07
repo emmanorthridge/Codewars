@@ -1,0 +1,34 @@
+function tribonacci(signature,n){
+  
+  lst = signature;
+  lst2 = lst.slice(0);
+  z = 0;
+  if (n == 0)
+  {
+    return lst = [];
+  }
+  else if (n == 1)
+  {
+    lst.pop();
+    lst.pop();
+    return lst;
+  }
+  else if (n == 2)
+  {
+    lst.pop();
+    return lst;
+  }
+  while(z < n - signature.length)
+  {
+    total = 0;
+    for (i = 0; i < lst.length; i++)
+    {
+      total += lst[i];
+    }
+    lst.push(total);
+    lst.shift();
+    lst2.push(total);
+    z++;
+  }
+  return lst2;
+}
