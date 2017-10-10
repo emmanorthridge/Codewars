@@ -1,0 +1,17 @@
+function moveVowel(input) {
+  var list = [];
+  var list2 = [];
+  var vowels = ["a", "e", "i", "o", "u"];
+  for (var i=0; i<input.length; i++)
+  {
+    if(vowels.indexOf(input[i]) == -1)
+    {
+      list.push(input[i]);
+    }
+    else
+    {
+      list2.push(input[i]);
+    }
+  }
+  return list.concat(list2).join("");
+}
