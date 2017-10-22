@@ -1,0 +1,27 @@
+function blocksToCollect(level) {
+  var pyramid = { total: 0, gold: 0, diamond: 0, emerald: 0, iron: 0 };
+  for (var i = 0; i < level; i++)
+  {
+    if (i % 4 === 0)
+    {
+      pyramid.gold += Math.pow(3, 2);
+      pyramid.total += Math.pow(3, 2);
+    }
+    else if (i % 4 === 1)
+    {
+      pyramid.diamond += Math.pow(5, 2);
+      pyramid.total += Math.pow(5, 2);
+    }
+    else if (i % 4 === 2)
+    {
+      pyramid.emerald += Math.pow(7, 2);
+      pyramid.total += Math.pow(7, 2);
+    }
+    else if (i % 4 === 3)
+    {
+      pyramid.iron += Math.pow(9, 2);
+      pyramid.total += Math.pow(9, 2);
+    }
+  }
+  return pyramid;
+}
