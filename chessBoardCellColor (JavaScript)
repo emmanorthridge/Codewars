@@ -1,0 +1,44 @@
+function chessBoardCellColor(cell1, cell2) {
+    let oddLetters = ['A', 'C', 'E', 'G'];
+    let evenLetters = ['B', 'D', 'F', 'H'];
+    let cell1status = '';
+    let cell2status = '';
+    if (oddLetters.indexOf(cell1[0]) !== -1){
+        if (cell1[1] % 2 !== 0){
+            cell1status = 'black';
+        }
+        else{
+            cell1status = 'white';
+        }
+    }
+    else{
+        if (cell1[1] % 2 !== 0){
+            cell1status = 'white';
+        }
+        else{
+            cell1status = 'black';
+        }
+    }
+    if (oddLetters.indexOf(cell2[0]) !== -1){
+        if (cell2[1] % 2 !== 0){
+            cell2status = 'black';
+        }
+        else{
+            cell2status = 'white';
+        }
+    }
+    else{
+        if (cell2[1] % 2 !== 0){
+            cell2status = 'white';
+        }
+        else{
+            cell2status = 'black';
+        }
+    }
+    if (cell1status === cell2status){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
