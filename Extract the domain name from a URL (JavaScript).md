@@ -11,8 +11,13 @@ domainName("https://www.cnet.com") == "cnet"
 function domainName(url){
   let patt = /(\/{2}|\.)/g;
   let result = url.match(patt);
-  console.log(result);
-  let sliced = url.slice(url.indexOf(result[0]) + 2, url.indexOf(result[1]));
+  let sliced = '';
+  if (result[0] == '//'){
+    sliced = url.slice(url.indexOf(result[0]) + 2, url.indexOf(result[1]));
+  }
+  else{
+    sliced = url.slice(url.indexOf(result[0]) + 1, url.lastIndexOf(result[1]));
+  }
   return sliced;
 }
 ```
